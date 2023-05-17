@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  mock:
+    container_name: smseg-mock
+    build: .
+    restart: always
+    ports:
+      - "4445:4445"
+    volumes:
+      - ./index.js:/var/www/sms/index.js
+      - ./package.json:/var/www/sms/package.json
+      - ./package-lock.json:/var/www/sms/package-lock.json
